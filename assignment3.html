@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 3 - Ben Braunstein</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="comp icon" href="favicon.ico" type="image/x-icon">
+    <!-- Import Boostrap v3.3.7 -->
+    <link href="stylesheets/bootstrap.readable.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/dropselector.js"></script>
+    <style>
+        .dropdown:hover .dropdown-menu {
+                display: block;
+                }
+        .hidden {
+            display: none;
+        }
+            </style>
+
+</head>
+
+<body onload="hideThings()">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nav-container').load('navbar.html');
+        });
+    </script>
+    <div id="nav-container">
+        <!-- The Navbar will get put here -->
+    </div>
+    <div class="container">
+        <h2>Assignment 3: IP Address Manager</h2>
+        <br>
+        <div id="fourOrSix" onchange="typeChange()">
+            IP Address Type:
+            <select id="fourOrSixDrop">
+                <option selected='selected'>Please Choose an Option</option>
+                <option value="ipv4">IPv4</option>
+                <option value="ipv6">IPv6</option>
+            </select>
+            <div id="fulOrLess" onchange="classfulChange()">
+                Classful or Classless:
+                <select id="fulOrLessDrop">
+                    <option value="def" selected='selected'>Please Choose an Option</option>
+                    <option value="classful">Classful</option>
+                    <option value="classless">Classless</option>
+                </select>
+                <div id="classfulChoice" onchange="classfulChoiceChange()">
+                    Classful Type:
+                    <select id="classfulChoiceDrop">
+                        <option value='def' selected='selected'>Please Choose an Option</option>
+                        <option value="classA">Class A</option>
+                        <option value="classB">Class B</option>
+                        <option value="classC">Class C</option>
+                        <option value="classD">Class D</option>
+                        <option value="classE">Class E</option>
+                    </select>
+                    <div id="classAipv4">
+                        <br>
+                        How many Class A IP Addresses do you need ?
+                        <br>
+                        <input type='text' id='classANum' onkeypress="pressedEnter()">
+                        <button onclick="makeAIPs()">Make IPs</button>
+                    </div>
+                    <div id="classBipv4">
+                        <br>
+                        How many Class B IP Addresses do you need ?
+                        <br>
+                        <input type='text' id='classBNum' onkeypress="pressedEnter()">
+                        <button onclick="makeBIPs()">Make IPs</button>
+                    </div>
+                    <div id="classCipv4">
+                        <br>
+                        How many Class C IP Addresses do you need ?
+                        <br>
+                        <input type='text' id='classCNum' onkeypress="pressedEnter()">
+                        <button onclick="makeCIPs()">Make IPs</button>
+                    </div>
+                    <div id="classDipv4">
+                        <br>
+                        How many Class D IP Addresses do you need ?
+                        <br>
+                        <input type='text' id='classDNum' onkeypress="pressedEnter()">
+                        <button onclick="makeDIPs()">Make IPs</button>
+                    </div>
+                    <p id="classEipv4" style='color:red;'><br>Class E IP Adresses are reserved. Sorry</p>
+                </div>
+                <div id="classlessIpv4">
+                    <br>
+                    How many Classless IPv4 Addresses do you need ?
+                    <input type='text' id='classlessIpv4Num' onkeypress="pressedEnter()">
+                    <button onclick='makeClasslessIpv4()'>Make IPs</button>
+                </div>
+            </div>
+            <div id='ipv6Choice'>
+                Would you like to apply Zero Compression to the Colon-Hex ?
+                <select id="zeroCompChoice" onchange="zeroCompChange()">
+                    <option value='def' selected='selected'>Please Choose an Option</option>
+                    <option value="standard">Standard</option>
+                    <option value="zeroComp">Zero Compression</option>
+                </select>
+                <div id='standardIpv6'>
+                    <br>
+                    How many Classless IPv6 Addresses do you need ?
+                    <input type='text' id='standardIpv6Num'>
+                    <button onclick='makeStandardIpv6()'>Make IPs</button>
+                </div>
+                <div id='zeroCompIpv6'>
+                    <br>
+                    How many Classless IPv6 Addresses do you need ?
+                    <input type='text' id='zeroCompIpv6Num'>
+                    <button onclick='makeZeroCompIpv6()'>Make IPs</button>
+                </div>
+            </div>
+            <table id="outputIpAdresses" style="font-family:'Courier New', Courier, monospace; text-align: center">
+                <br>
+                <!-- Code to put all IP Adresses Created will be placed here during the execution of web application -->
+            </div>
+            </div>
+            </div>
+            
+            </body>
+</html>

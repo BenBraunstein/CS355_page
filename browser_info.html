@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Browser Info - Ben Braunstein</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="comp icon" href="favicon.ico" type="image/x-icon">
+    <!-- Import Boostrap v3.3.7 -->
+    <link href="stylesheets/bootstrap.readable.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+    <script src="scripts/browserInfoScript.js"></script>
+
+</head>
+
+<body onload="GetAllBrowserInfo()">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nav-container').load('navbar.html');
+        });
+    </script>
+    <div id="nav-container">
+        <!-- The Navbar will get put here -->
+    </div>
+    <div class="container">
+        <h2>Here is the PC Information Page</h2>
+        <h4>Browser Info</h4>
+        <ul>
+            <li>
+                <h5 id="outputName"></h5>
+            </li>
+            <li>
+                <h5 id="outputVersion"></h5>
+            </li>
+            <li>
+                <h5 id="outputLanguage"></h5>
+            </li>
+        </ul>
+        <h4>Screen Info</h4>
+        <ul>
+            <li>
+                <h5 id="outputHeightWidth"></h5>
+            </li>
+            <li>
+                <h5 id="outputPixelDepth"></h5>
+            </li>
+            <li>
+                <h5 id="outputColorDepth"></h5>
+            </li>
+
+
+        </ul>
+    </div>
+
+</body>
+
+</html>
